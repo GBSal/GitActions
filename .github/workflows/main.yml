@@ -5,12 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Hello world action step
-      uses: ./
-      with:
-        who-to-greet: 'My first  github action'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: hello
+        with:
+          who-to-greet: 'My First git action'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}

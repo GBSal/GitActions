@@ -6,10 +6,7 @@ jobs:
     name: A job to say hello
     steps:
     - name: Hello world action step
-      id: hello
-      uses: GBSal/GitActions/checkout@v1
-    - name: Pull the action repo
-      uses: ./.github/GBSal/GitActions
+      uses: ./.github/GBSal/GitActions@v1
       with:
         who-to-greet: 'My first  github action'
     # Use the output from the `hello` step

@@ -5,8 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+    - name: Checkout
+      uses: actions/checkout@v1
     - name: Hello world action step
-      uses: ./.github/GBSal/GitActions@v1
+      uses: ./
       with:
         who-to-greet: 'My first  github action'
     # Use the output from the `hello` step

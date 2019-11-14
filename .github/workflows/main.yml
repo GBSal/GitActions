@@ -12,7 +12,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: hello
         with:
-          who-to-greet: 'My First git action'
+          who-to-greet: 'SAL'
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
